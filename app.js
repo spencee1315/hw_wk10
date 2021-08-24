@@ -6,7 +6,7 @@ const Manager = require("./lib/Manager");
 
 const employees = [];
 
-//Initiate the app
+//Initiate the app, called at the end
 function initApp() {
     startHtml();
     addMember();
@@ -161,3 +161,28 @@ function addHtml(member) {
         });
     });
 }
+
+// completes build of html file
+function finishHtml() {
+    const html = ` </div>
+    </div>
+    
+</body>
+</html>`;
+
+    fs.appendFile("./output/team.html", html, function(err) {
+        if (err) {
+            console.log(err);
+        };
+    });
+    console.log("end");
+}
+
+// addMember();
+// startHtml();
+// addHtml();
+// .then(function())
+// finishHtml();
+
+// calling the initApp function
+initApp();
