@@ -14,13 +14,13 @@ describe("Employee", () => {
 
     it("Can set id via constructor argument", () => {
         const testValue = 100;
-        const e = new Employee("First", testValue);
+        const e = new Employee("Foo", testValue);
         expect(e.id).toBe(testValue);
     });
 
     it("Can set email via constructor argument", () => {
         const testValue = "test@test.com";
-        const e = new Employee("First", 1, testValue);
+        const e = new Employee("Foo", 1, testValue);
         expect(e.email).toBe(testValue);
     });
 
@@ -35,7 +35,7 @@ describe("Employee", () => {
     describe("getId", () => {
         it("Can get id via getId()", () => {
             const testValue = 100;
-            const e = new Employee("First", testValue);
+            const e = new Employee("Foo", testValue);
             expect(e.getId()).toBe(testValue);
         });
     });
@@ -43,7 +43,7 @@ describe("Employee", () => {
     describe("getEmail", () => {
         it("Can get email via getEmail()", () => {
             const testValue = "test@test.com";
-            const e = new Employee("First", 1, testValue);
+            const e = new Employee("Foo", 1, testValue);
             expect(e.getEmail()).toBe(testValue);
         });
     });
