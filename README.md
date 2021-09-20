@@ -47,6 +47,9 @@ When all information on the team member has been entered, the user is asked whet
 ## Tests
 Run `npm test` to run Jest for tests on constructors.
 
+All tests passed, view video here - [Screencastify](https://drive.google.com/file/d/1XWGkyeoJjdE29CWSsF8WCwB91CCGx7ZZ/view)<br>
+<img src="Assets/HW_WK10_Tests.png">
+
 ## Snippet
 This a code snippet from the lib, Employee.js file..
 
