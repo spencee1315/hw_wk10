@@ -27,7 +27,7 @@ Steps to install application:
 
 1. Git Clone (SSH or HTTPS) or Download Repository
 2. In the directory with app.js run `npm install`
-3. Enter `npm server.js`
+3. Enter `npm app.js`
 4. Open generated HTML
 
 ## Usage 
