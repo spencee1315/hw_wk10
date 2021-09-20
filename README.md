@@ -27,12 +27,13 @@ Steps to install application:
 
 1. Git Clone (SSH or HTTPS) or Download Repository
 2. In the directory with app.js run `npm install`
-3. Enter `npm app.js`
-4. Open generated HTML
+3. Enter `npm app.js` to run application
 
 ## Usage 
 
-Use inquirer from your command line to answer questions about your project.
+1. Once installed, enter `npm app.js` to run application
+2. Use inquirer from your command line to answer questions about your project
+3. Open generated HTML (see screenshot below as an example)
 
 View walk through video here - [Screencastify](https://drive.google.com/file/d/1FI_s1k2mU1kK21aeDuGarcslz7457XU-/view)<br>
 <img src="Assets/HW_WK10_Team_Screenshot.png">
