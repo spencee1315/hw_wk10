@@ -32,17 +32,10 @@ Steps to install application:
 
 ## Usage 
 
-Use inquirer from your command line to answer questions about your project.<br>
+Use inquirer from your command line to answer questions about your project.
+
 View walk through video here - [Screencastify](https://drive.google.com/file/d/1FI_s1k2mU1kK21aeDuGarcslz7457XU-/view)<br>
 <img src="Assets/HW_WK10_Team_Screenshot.png">
-
-Upon launching the app, entering `node app.js` in the command line. The user is then prompted to describe the first member of their team. The user enters the team member's name, selects that member's role from a list (options include: "Engineer", "Intern", and "Manager"). Next the user enters the member's ID, email address, and then must enter another piece of information that will differe depending on what role was selected. 
-
-If Engineer - the app asks the user for the team member's GitHub username
-If Intern - the members school is requested
-If Manager - the user is prompted for the team member's phone number
-
-When all information on the team member has been entered, the user is asked whether there are any more members they would like to add. If so, the user is asked the same questions about the new team member. If not, an HTML file is created with cards displaying the information on all the team members entered by the user in the "outputs" folder titled "team.html".
 
 ## Tests
 Run `npm test` to run Jest for tests on constructors.
