@@ -4,7 +4,10 @@
   "description": "## Your Task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "directories": {
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -18,10 +21,12 @@
   "homepage": "https://github.com/spencee1315/hw_wk10#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "inquirer": "^8.1.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "jest": "^26.5.2"
   }
 }

@@ -52,7 +52,7 @@ function addMember() {
         },
     {
         type: "list",
-        message: "Would you like to add more team members?"
+        message: "Would you like to add more team members?",
         choices: [
             "yes",
             "no"
@@ -70,7 +70,7 @@ function addMember() {
             newMember = new Manager(name, id, email, roleInfo);
         }
         employees.push(newMember);
-        addHtml(newMember);
+        addHtml(newMember)
         .then(function() {
             if (moreMembers === "yes") {
                 addMember();
@@ -113,7 +113,7 @@ function addHtml(member) {
         const name = member.getName();
         const role = member.getRole();
         const id = member.getId();
-        const email= member.getEmai();
+        const email= member.getEmail();
         let data = "";
         if (role === "Engineer") {
             const gitHub = member.getGithub();

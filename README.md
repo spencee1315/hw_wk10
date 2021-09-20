@@ -1,174 +1,95 @@
-# 10 Object-Oriented Programming: Team Profile Generator
+# Object-Oriented Programming: Team Profile Generator - Homework 10, UW Coding Bootcamp
 
-## Your Task
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
+## Description
 
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
+For week 10 of the UW Coding Bootcamp my homework invited me to build a Team Profile Generator, which is a command-line-input application run in Node.js that requests information from the user about members of an engineering team and generates an HTML file displaying that information. Unit tests written will ensure that each unit passes and the application runs as intended.
 
-> **Note**: There is no starter code for this assignment.
+This application is not deployed so you will see a link below to a walkthrough video that demonstrates the applications functionality and all of the tests passing. Please find said video and link below in the Usage section.
 
-## User Story
+## Built With
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
+* [Jest](https://www.npmjs.com/package/jest)
+* [Inquirer](https://www.npmjs.com/package/inquirer)
+* [Node.js](https://nodejs.org/en/)
+* [OOP](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
+* [W3 Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+* [Developer Mozilla](https://developer.mozilla.org)
+
+## Link to GitHub Repo
+
+* [See Live Site](https://github.com/spencee1315/hw_10)
+
+## Installation 
+
+Steps to install application:
+
+1. Git Clone (SSH or HTTPS) or Download Repository
+2. In the directory with app.js run `npm install`
+3. Enter `npm server.js`
+4. Open generated HTML
+
+## Usage 
+
+Use inquirer from your command line to answer questions about your project.
+View walk through video here - [Screencastify](https://drive.google.com/file/d/1FI_s1k2mU1kK21aeDuGarcslz7457XU-/view)<br>
+<img src="Assets/HW_WK10_Team_Screenshot.png">
+
+Upon launching the app, entering `node app.js` in the command line. The user is then prompted to describe the first member of their team. The user enters the team member's name, selects that member's role from a list (options include: "Engineer", "Intern", and "Manager"). Next the user enters the member's ID, email address, and then must enter another piece of information that will differe depending on what role was selected. 
+
+If Engineer - the app asks the user for the team member's GitHub username
+If Intern - the members school is requested
+If Manager - the user is prompted for the team member's phone number
+
+When all information on the team member has been entered, the user is asked whether there are any more members they would like to add. If so, the user is asked the same questions about the new team member. If not, an HTML file is created with cards displaying the information on all the team members entered by the user in the "outputs" folder titled "team.html".
+
+## Tests
+Run `npm test` to run Jest for tests on constructors.
+
+## Snippet
+This a code snippet from the lib, Employee.js file..
+
+```javascript
+// import models
+// Defining employee class
+class Employee {
+    constructor (name, id, email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    getName() {
+        return this.name;
+    }
+    getId() {
+        return this.id;
+    }
+    getEmail() {
+        return this.email;
+    }
+    getRole() {
+        return "Employee";
+    }
+}
+
+module.exports = Employee;
 ```
 
-## Acceptance Criteria
+## License 
+This project is licensed under MIT
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
+## Contributing 
+Contributors should read the installation section. 
 
-## Mock-Up
+### Authors
 
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
+* **Elliott Spencer**
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
+### Contact Information
 
-The styling in the image is just an example, so feel free to add your own.
+* [Link to Portfolio Site](https://spencee1315.github.io/hw_wk2/)
 
-## Getting Started
+* [Link to Github](https://github.com/spencee1315)
 
-This homework will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
-
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
-
-```bash
-node index.js
-```
-
-It is recommended that you start with a directory structure that looks like the following example:
-
-```md
-__tests__/			// jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-dist/               // rendered output (HTML) and CSS style sheet
-lib/				// classes
-src/				// template helper code
-index.js			// runs the application
-```
-
-The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
-
-The first class is an `Employee` parent class with the following properties and methods:
-
-* `name`
-
-* `id`
-
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`&mdash;returns `'Employee'`
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-
-* `officeNumber`
-
-* `getRole()`&mdash;overridden to return `'Manager'`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-
-* `github`&mdash;GitHub username
-
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
-
-Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Deliverables: 15%
-
-* A sample HTML file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
-
-* The walkthrough video must show all four tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-
-* The walkthrough video must demonstrate a generated HTML file that matches the user input.
-
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-	* Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+* [Link to LinkedIn](https://www.linkedin.com/in/elliott-spencer-886a9818/)
