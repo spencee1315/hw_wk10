@@ -32,7 +32,7 @@ Steps to install application:
 
 ## Usage 
 
-Use inquirer from your command line to answer questions about your project.
+Use inquirer from your command line to answer questions about your project.<br>
 View walk through video here - [Screencastify](https://drive.google.com/file/d/1FI_s1k2mU1kK21aeDuGarcslz7457XU-/view)<br>
 <img src="Assets/HW_WK10_Team_Screenshot.png">
 
